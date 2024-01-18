@@ -22,8 +22,8 @@
                <div>
                     <label>Name</label>
                     <input type="text" name="name" value="{{ $product->name}}" >
-                    <label>Description (optional)</label>
-                    <textarea cols="10" rows="5" name="description" value="{{ $product->description }}"> {{$product->description}} ></textarea>
+                    <label>Description (Optional)</label>
+                    <textarea cols="10" rows="5" name="description" value="{{ $product->description }}"> {{$product->description}}</textarea>
                     <label>Add Image</label>
                     <img src="{{asset('images/'.$product->image) }}" alt="" class="img-product" id="file-preview" />
                     <input type="hidden" name="hidden_product_image" value={{ $product->image }}/>
@@ -32,17 +32,17 @@
                <div>
                     <label>Category</label>
                     <select  name="category" >
-                        @foreach(json_decode('{"Yes":"Yes","No":"No"}',true) as $optionKey=>$optionValue)
+                        @foreach(json_decode('{"Shawl":"Shawl","Square Hijab":"Square Hijab", "Pants":"Pants", "Blouse":"Blouse"}',true) as $optionKey=>$optionValue)
                             <option value="{{$optionKey}}" {{ (isset($product->category) && $product->category == $optionKey) ? 'selected' : ''}} >{{$optionValue}}</option>
                         @endforeach
                     </select>
 
                     <hr>
-                    <label>Inventory</label>
+                    <label>Stock</label>
                     <input type="text" name="quantity" value="{{$product->quantity}}" >
                     <hr>
-                    
-                    <label>Price</label>
+
+                    <label>Price(RM)</label>
                     <input type="text" name="price" value="{{$product->price}}">
                </div>
             </div>

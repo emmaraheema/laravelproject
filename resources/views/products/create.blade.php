@@ -30,15 +30,15 @@
                <div>
                     <label>Category</label>
                     <select  name="category" >
-                        @foreach(json_decode('{"Yes":"Yes","No":"No"}',true) as $optionKey=>$optionValue)
+                        @foreach(json_decode('{"Shawl":"Shawl","Square Hijab":"Square Hijab", "Pants":"Pants", "Blouse":"Blouse"}',true) as $optionKey=>$optionValue)
                             <option value="{{$optionKey}}" >{{$optionValue}}</option>
                         @endforeach
                     </select>
                     <hr>
-                    <label>Inventory</label>
+                    <label>Stock</label>
                     <input type="text" name="quantity" >
                     <hr>
-                    <label>Price</label>
+                    <label>Price(RM)</label>
                     <input type="text" name="price" >
                </div>
             </div>

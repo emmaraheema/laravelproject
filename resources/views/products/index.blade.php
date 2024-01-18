@@ -4,9 +4,14 @@
 <main class="container">
         <section>
             <div class="titlebar">
-                <h1>Products</h1>
+                <h1>L A R A V E L</h1>
+                
                 <a href="{{ route('products.create')}}" class='btn-link'>Add Product</a>
             </div>
+            
+            <p><li>THIS IS AN EXAMPLE FOR BOUTIQUE INVENTORY LIST</li></p>
+
+
             @if($message= Session::get('success'))
                 <script type="text/javascript">
                                         const Toast = Swal.mixin({
@@ -53,11 +58,11 @@
                     </div>
                 </form>
                 <div class="table-product-head">
-                    <p>Image</p>
-                    <p>Name</p>
-                    <p>Category</p>
-                    <p>Inventory</p>
-                    <p>Actions</p>
+                    <p><b>IMAGE</b></p>
+                    <p><b>NAME</b></p>
+                    <p><b>CATEGORY</b></p>
+                    <p><b>STOCK</b></p>
+                    <p><b>ACTIONS</b></p>
                 </div>
                 <div class="table-product-body">
                     @if (count($products) >0)
@@ -70,6 +75,7 @@
                                 <a href="{{ route('products.edit', $product->id)}}" class="btn-link btn btn-success" style="padding-top: 4px;padding-bottom:4px">
                                     <i class="fas fa-pencil-alt" ></i> 
                                 </a>
+
                                 <form method="post" action="{{route('products.destroy', $product->id)}}">
                                     @method('delete')
                                     @csrf  
@@ -77,6 +83,7 @@
                                             <i class="far fa-trash-alt"></i>
                                         </button>
                                 </form>
+
                             </div>
                         @endforeach
 
